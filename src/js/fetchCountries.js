@@ -7,3 +7,5 @@ export function fetchCountries(name) {
          return response.json();
       });
 };
+// https://restcountries.com/v2/name/${all}?fields=name,capital,population,flag,languages
+// https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages
