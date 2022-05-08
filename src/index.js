@@ -11,15 +11,17 @@ const searchBox = document.querySelector('#search-box');
 const countryEl = document.querySelector('.country-list');
 const infoEl = document.querySelector('.country-info');
 
-searchBox.addEventListener('input', debounce(e => {
+searchBox.addEventListener('input', debounce(onSearchBox, DEBOUNCE_DELAY));
+
+function onSearchBox(e) {
   e.preventDefault();
-  if (searchBox.value) {
-    const name = searchBox.value.trim();
+  const name = searchBox.value.trim();
+  if (name) {
     return fetchCountries(name)
     .then(showCountries)
     .catch(error);
   } else clearInput();
-}, DEBOUNCE_DELAY));
+};
 
 function showCountries(countries) {
   clearInput();
