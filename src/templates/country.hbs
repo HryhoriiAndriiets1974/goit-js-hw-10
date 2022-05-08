@@ -1,10 +1,14 @@
 {{#each this}}
 <div>
-    <h2><img src='{{flags.svg}}' alt='Flag: {{name.official}}' width="100px" />{{name.official}}</h2>
+    <h2></h2><img src='{{flags.svg}}' alt='Flag: {{name.official}}' width="100px" />
+        {{name.official}}
+    </h2>
     <ul>
         <li>Capital: {{capital}}</li>
         <li>Population: {{population}}</li>
-        <li>Languages: {{lang}} </li>
+        <li>Languages:  {{#each languages}}
+                           {{this}}{{#unless @iso639_2}},{{/unless}}
+                        {{/each}} </li>
     </ul>
 </div>
 {{/each}}

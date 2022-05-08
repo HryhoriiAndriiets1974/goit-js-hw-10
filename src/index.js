@@ -36,7 +36,7 @@ function showCountries(countries) {
 
 function markupCountries(countries) {
   const markup = countriesList(countries);
-  infoEl.insertAdjacentHTML('beforeend', markup);
+  countryEl.insertAdjacentHTML('beforeend', markup);
 };
 
 function markupCountry(countries) {
@@ -50,5 +50,5 @@ function clearInput() {
 };
 
 function error(){
-  return Notify.failure('Oops, there is no country with that name');
+  return Notify.failure('Oops, there is no country with that name', {timeout: 5000});
 };
